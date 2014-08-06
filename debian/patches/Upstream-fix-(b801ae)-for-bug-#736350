@@ -1,0 +1,25 @@
+Description: Default to BIND_PER_VERTEX to fix texture corruption
+
+Bug-Debian: http://bugs.debian.org/736350
+Origin: upstream https://github.com/openscenegraph/osg/commit/b801ae9d499a78889a322b95fbdf9864828349bc
+
+--- openscenegraph-3.2.0~rc1.orig/OpenSceneGraph/src/osg/Geometry.cpp
++++ openscenegraph-3.2.0~rc1/OpenSceneGraph/src/osg/Geometry.cpp
+@@ -161,12 +161,14 @@ void Geometry::setTexCoordArray(unsigned
+     if (_texCoordList.size()<=index)
+         _texCoordList.resize(index+1);
+ 
+-    if (array && binding!=osg::Array::BIND_UNDEFINED) array->setBinding(binding);
++    if (array)
++    {
++        if (binding!=osg::Array::BIND_UNDEFINED) array->setBinding(binding);
++        else array->setBinding(osg::Array::BIND_PER_VERTEX);
++    }
+ 
+     _texCoordList[index] = array;
+ 
+-    // do we set to array BIND_PER_VERTEX?
+-
+     dirtyDisplayList();
+ 
+     if (_useVertexBufferObjects && array)

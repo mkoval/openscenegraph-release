@@ -1,0 +1,13 @@
+Index: openscenegraph/OpenSceneGraph/include/osg/GL
+===================================================================
+--- openscenegraph.orig/OpenSceneGraph/include/osg/GL	2014-08-05 16:58:36.000000000 -0500
++++ openscenegraph/OpenSceneGraph/include/osg/GL	2014-08-06 06:45:29.857287930 -0500
+@@ -168,7 +168,7 @@
+ // add defines for OpenGL targets that don't define them, just to ease compatibility across targets
+ #ifndef GL_DOUBLE
+     #define GL_DOUBLE 0x140A
+-    typedef double GLdouble;
++    #define GLdouble double
+ #endif
+ 
+ #ifndef GL_INT
