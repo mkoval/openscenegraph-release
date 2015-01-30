@@ -1,11 +1,18 @@
-Description: Default to BIND_PER_VERTEX to fix texture corruption
+From: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Date: Thu, 29 Jan 2015 22:53:14 -0500
+Subject: Upstream-fix-(b801ae)-for-bug-#736350
 
 Bug-Debian: http://bugs.debian.org/736350
 Origin: upstream https://github.com/openscenegraph/osg/commit/b801ae9d499a78889a322b95fbdf9864828349bc
+---
+ OpenSceneGraph/src/osg/Geometry.cpp | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
---- openscenegraph-3.2.0~rc1.orig/OpenSceneGraph/src/osg/Geometry.cpp
-+++ openscenegraph-3.2.0~rc1/OpenSceneGraph/src/osg/Geometry.cpp
-@@ -161,12 +161,14 @@ void Geometry::setTexCoordArray(unsigned
+diff --git a/OpenSceneGraph/src/osg/Geometry.cpp b/OpenSceneGraph/src/osg/Geometry.cpp
+index d758e93..ca0f4ad 100644
+--- a/OpenSceneGraph/src/osg/Geometry.cpp
++++ b/OpenSceneGraph/src/osg/Geometry.cpp
+@@ -161,12 +161,14 @@ void Geometry::setTexCoordArray(unsigned int index,Array* array, osg::Array::Bin
      if (_texCoordList.size()<=index)
          _texCoordList.resize(index+1);
  

@@ -1,8 +1,16 @@
-Author: 
-Description: 
+From: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Date: Thu, 29 Jan 2015 22:53:14 -0500
+Subject: override-soversions
+
+---
+ OpenSceneGraph/src/OpenThreads/CMakeLists.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/OpenSceneGraph/src/OpenThreads/CMakeLists.txt b/OpenSceneGraph/src/OpenThreads/CMakeLists.txt
+index 168055e..59ccca8 100644
 --- a/OpenSceneGraph/src/OpenThreads/CMakeLists.txt
 +++ b/OpenSceneGraph/src/OpenThreads/CMakeLists.txt
-@@ -5,7 +5,9 @@
+@@ -5,7 +5,9 @@ ADD_DEFINITIONS(-DOPENTHREADS_EXPORTS)
  SET(OPENTHREADS_MAJOR_VERSION 2)
  SET(OPENTHREADS_MINOR_VERSION 6)
  SET(OPENTHREADS_PATCH_VERSION 0)

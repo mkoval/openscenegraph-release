@@ -1,9 +1,10 @@
-override-soversions.patch
-disable-zip-plugin-with-embedded-zlib.patch
-check__FreeBSD_kernel__
-osg_libav9.patch
-Upstream-fix-(b801ae)-for-bug-#736350 -p1
-fix_for_multithreaded_vrml_loading
-osgDB_freetype.so_no_longer_built
-dont-build-osgframerenderer-on-gles.patch
-change-typedef.patch
+0001-override-soversions.patch
+0002-disable-zip-plugin-with-embedded-zlib.patch
+0003-check__FreeBSD_kernel__.patch
+0004-osg_libav9.patch
+0005-Upstream-fix-b801ae-for-bug-736350.patch
+0006-fix_for_multithreaded_vrml_loading.patch
+0007-osgDB_freetype.so_no_longer_built.patch
+0008-dont-build-osgframerenderer-on-gles.patch
+0009-change-typedef.patch
+0010-Disable-a-deprecated-GLX-command.patch

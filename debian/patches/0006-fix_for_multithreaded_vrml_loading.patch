@@ -1,8 +1,17 @@
-Index: osggit/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp
+From: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Date: Thu, 29 Jan 2015 22:53:14 -0500
+Subject: fix_for_multithreaded_vrml_loading
+
 ===================================================================
---- osggit.orig/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp	2013-09-18 13:08:37.000000000 +0200
-+++ osggit/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp	2013-09-18 13:16:08.000000000 +0200
-@@ -756,6 +756,38 @@
+---
+ .../osgPlugins/Inventor/ConvertFromInventor.cpp    | 93 +++++++++++-----------
+ 1 file changed, 46 insertions(+), 47 deletions(-)
+
+diff --git a/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp b/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp
+index 3e150cc..e841df4 100644
+--- a/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp
++++ b/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp
+@@ -756,6 +756,38 @@ ConvertFromInventor::postLOD(void* data, SoCallbackAction* action,
  
      return SoCallbackAction::CONTINUE;
  }
@@ -41,7 +50,7 @@ Index: osggit/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp
  ///////////////////////////////////////////////////////////////////
  SoCallbackAction::Response
  ConvertFromInventor::preShape(void* data, SoCallbackAction* action,
-@@ -769,45 +801,8 @@
+@@ -769,45 +801,8 @@ ConvertFromInventor::preShape(void* data, SoCallbackAction* action,
      ConvertFromInventor* thisPtr = (ConvertFromInventor *) (data);
  
      // Normal and color binding map from Inventor to OSG
@@ -89,7 +98,7 @@ Index: osggit/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp
  
      // Get normal and color binding
      if (node->isOfType(SoVertexShape::getClassTypeId()))
-@@ -1877,6 +1872,17 @@
+@@ -1877,6 +1872,17 @@ update: The mentioned bug is probably just for very old NVidia drivers (commit t
  
      return stateSet;
  }
@@ -107,7 +116,7 @@ Index: osggit/OpenSceneGraph/src/osgPlugins/Inventor/ConvertFromInventor.cpp
  ////////////////////////////////////////////////////////////////////
  osg::Texture2D*
  ConvertFromInventor::convertIVTexToOSGTex(const SoNode* soNode,
-@@ -1946,14 +1952,7 @@
+@@ -1946,14 +1952,7 @@ ConvertFromInventor::convertIVTexToOSGTex(const SoNode* soNode,
      // Set name
      osgTex->setName(soNode->getName().getString());
  

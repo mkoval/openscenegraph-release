@@ -1,0 +1,22 @@
+From: Michael Koval <mkoval@cs.cmu.edu>
+Date: Thu, 29 Jan 2015 22:55:44 -0500
+Subject: Disable a deprecated GLX command.
+
+---
+ OpenSceneGraph/src/osgViewer/PixelBufferX11.cpp | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/OpenSceneGraph/src/osgViewer/PixelBufferX11.cpp b/OpenSceneGraph/src/osgViewer/PixelBufferX11.cpp
+index c835828..73d8159 100644
+--- a/OpenSceneGraph/src/osgViewer/PixelBufferX11.cpp
++++ b/OpenSceneGraph/src/osgViewer/PixelBufferX11.cpp
+@@ -24,6 +24,9 @@
+ 
+ #include <unistd.h>
+ 
++// Disable a deprecated GLX command that is not supported by Parallels.
++#undef GLX_SGIX_pbuffer
++
+ using namespace osgViewer;
+ 
+ PixelBufferX11::PixelBufferX11(osg::GraphicsContext::Traits* traits)

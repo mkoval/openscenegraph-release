@@ -1,3 +1,13 @@
+From: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Date: Thu, 29 Jan 2015 22:53:14 -0500
+Subject: check__FreeBSD_kernel__
+
+---
+ OpenSceneGraph/applications/present3D/Cluster.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/OpenSceneGraph/applications/present3D/Cluster.cpp b/OpenSceneGraph/applications/present3D/Cluster.cpp
+index 361dfe8..2a91499 100644
 --- a/OpenSceneGraph/applications/present3D/Cluster.cpp
 +++ b/OpenSceneGraph/applications/present3D/Cluster.cpp
 @@ -33,7 +33,7 @@

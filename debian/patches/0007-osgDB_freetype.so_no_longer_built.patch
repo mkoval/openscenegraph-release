@@ -1,7 +1,33 @@
-Index: pkg-osg/OpenSceneGraph/CMakeModules/FindFreeType.cmake
+From: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Date: Thu, 29 Jan 2015 22:53:14 -0500
+Subject: osgDB_freetype.so_no_longer_built
+
 ===================================================================
---- pkg-osg.orig/OpenSceneGraph/CMakeModules/FindFreeType.cmake	2014-04-10 20:41:07.000000000 +0200
-+++ /dev/null	1970-01-01 00:00:00.000000000 +0000
+---
+ OpenSceneGraph/CMakeLists.txt                      |   2 +-
+ OpenSceneGraph/CMakeModules/FindFreeType.cmake     | 117 ---------------------
+ .../src/osgPlugins/freetype/FreeTypeFont.cpp       |   6 +-
+ 3 files changed, 5 insertions(+), 120 deletions(-)
+ delete mode 100644 OpenSceneGraph/CMakeModules/FindFreeType.cmake
+
+diff --git a/OpenSceneGraph/CMakeLists.txt b/OpenSceneGraph/CMakeLists.txt
+index fe46299..8e5147a 100644
+--- a/OpenSceneGraph/CMakeLists.txt
++++ b/OpenSceneGraph/CMakeLists.txt
+@@ -512,7 +512,7 @@ IF(ANDROID)
+     ANDROID_3RD_PARTY()
+ ELSE()
+ # Common to all platforms except android:
+-    FIND_PACKAGE(FreeType)
++    FIND_PACKAGE(Freetype)
+     FIND_PACKAGE(Inventor)
+     FIND_PACKAGE(Jasper)
+     FIND_PACKAGE(OpenEXR)
+diff --git a/OpenSceneGraph/CMakeModules/FindFreeType.cmake b/OpenSceneGraph/CMakeModules/FindFreeType.cmake
+deleted file mode 100644
+index 0e16dd4..0000000
+--- a/OpenSceneGraph/CMakeModules/FindFreeType.cmake
++++ /dev/null
 @@ -1,117 +0,0 @@
 -# - Locate FreeType library
 -# This module defines
@@ -120,10 +146,10 @@ Index: pkg-osg/OpenSceneGraph/CMakeModules/FindFreeType.cmake
 -ENDIF(FREETYPE_LIBRARY AND FREETYPE_INCLUDE_DIRS)
 -
 -
-Index: pkg-osg/OpenSceneGraph/src/osgPlugins/freetype/FreeTypeFont.cpp
-===================================================================
---- pkg-osg.orig/OpenSceneGraph/src/osgPlugins/freetype/FreeTypeFont.cpp	2014-04-10 20:41:07.000000000 +0200
-+++ pkg-osg/OpenSceneGraph/src/osgPlugins/freetype/FreeTypeFont.cpp	2014-04-10 20:42:27.000000000 +0200
+diff --git a/OpenSceneGraph/src/osgPlugins/freetype/FreeTypeFont.cpp b/OpenSceneGraph/src/osgPlugins/freetype/FreeTypeFont.cpp
+index a6dcd7a..8af1470 100644
+--- a/OpenSceneGraph/src/osgPlugins/freetype/FreeTypeFont.cpp
++++ b/OpenSceneGraph/src/osgPlugins/freetype/FreeTypeFont.cpp
 @@ -14,8 +14,10 @@
  #include "FreeTypeFont.h"
  #include "FreeTypeLibrary.h"
@@ -137,16 +163,3 @@ Index: pkg-osg/OpenSceneGraph/src/osgPlugins/freetype/FreeTypeFont.cpp
  
  #include <osg/Notify>
  #include <osg/io_utils>
-Index: pkg-osg/OpenSceneGraph/CMakeLists.txt
-===================================================================
---- pkg-osg.orig/OpenSceneGraph/CMakeLists.txt	2014-04-10 20:13:00.488008564 +0200
-+++ pkg-osg/OpenSceneGraph/CMakeLists.txt	2014-04-10 20:45:19.068026311 +0200
-@@ -512,7 +512,7 @@
-     ANDROID_3RD_PARTY()
- ELSE()
- # Common to all platforms except android:
--    FIND_PACKAGE(FreeType)
-+    FIND_PACKAGE(Freetype)
-     FIND_PACKAGE(Inventor)
-     FIND_PACKAGE(Jasper)
-     FIND_PACKAGE(OpenEXR)
