@@ -24,6 +24,9 @@
 
 #include <unistd.h>
 
+// Disable a deprecated GLX command that is not supported by Parallels.
+#undef GLX_SGIX_pbuffer
+
 using namespace osgViewer;
 
 PixelBufferX11::PixelBufferX11(osg::GraphicsContext::Traits* traits)
