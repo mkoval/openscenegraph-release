@@ -33,7 +33,7 @@
 #if defined(__linux)
     #include <unistd.h>
     #include <linux/sockios.h>
-#elif defined(__FreeBSD__) || defined(__DragonFly__)
+#elif defined(__FreeBSD__) || defined(__DragonFly__) || defined(__FreeBSD_kernel__)
     #include <unistd.h>
     #include <sys/sockio.h>
 #elif defined(__sgi)
