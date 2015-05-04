@@ -16,9 +16,8 @@ Build-Depends: debhelper (>= 7.0.0),
                lib3ds-dev,
                libfreetype6-dev,
                libpng-dev,
-               libcoin80-dev,
+               libcoin60-dev,
                libjasper-dev,
-               libgdal-dev,
                libx11-dev,
                libxmu-dev,
                freeglut3-dev [!armhf],
@@ -33,7 +32,7 @@ Build-Depends: debhelper (>= 7.0.0),
                libqt4-opengl-dev,
                librsvg2-dev,
                libpoppler-glib-dev,
-               libpangox-1.0-dev
+               libpango-1.0-dev
 Standards-Version: 3.9.4
 Homepage: http://www.openscenegraph.org/
 Vcs-Git: https://alioth.debian.org/anonscm/git/pkg-osg/pkg-osg.git
